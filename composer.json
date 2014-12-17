@@ -1,5 +1,5 @@
 {
-    "name": "Indieteq/PHP-MySQL-PDO-Database-Class",
+    "name": "tarunjangra/mysql-pdo",
     "require": {
         "php": ">=5.3.0"
     }

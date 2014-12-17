@@ -35,10 +35,10 @@ class DB
 	*	2. Connect to database.
 	*	3. Creates the parameter array.
 	*/
-		public function __construct()
+		public function __construct($settings = array())
 		{ 			
 			$this->log = new Log();	
-			$this->Connect();
+			$this->Connect($settings);
 			$this->parameters = array();
 		}
 	
@@ -50,9 +50,9 @@ class DB
 	*	3. Tries to connect to the database.
 	*	4. If connection failed, exception is displayed and a log file gets created.
 	*/
-		private function Connect()
+		private function Connect($settings = array())
 		{
-			$this->settings = parse_ini_file("settings.ini.php");
+			$this->settings = $settings;
 			$dsn = 'mysql:dbname='.$this->settings["dbname"].';host='.$this->settings["host"].'';
 			try 
 			{
